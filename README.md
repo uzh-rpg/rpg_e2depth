@@ -115,7 +115,7 @@ You can extend DENSE or create your own dataset to train your network using our
 Event camera plugin. You can have a look [here](https://carla.readthedocs.io/en/latest/ref_sensors/#dvs-camera) for a detailed
 documentation.
 
-![Carla with Events](https://carla.readthedocs.io/en/latest/img/sensor_dvs.gif)
+![Carla with Events](doc/img/sensor_dvs.gif)
 
 ## Acknowledgements
 
