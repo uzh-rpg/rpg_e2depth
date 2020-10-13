@@ -73,7 +73,7 @@ conda activate E2DEPTH
 - Run reconstruction:
 
 ```bash
-python run_reconstruction.py \
+python offline_depth.py \
   -c pretrained/E2DEPTH_si_grad_loss_mixed.pth.tar \
   -i data/test/events/voxels \
   -o /tmp \
