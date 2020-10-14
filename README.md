@@ -13,7 +13,7 @@ code or our event camera plugin in
 cite the following publication:
 
 ```bibtex
-@Article{Hidalgo203dv,
+@Article{Hidalgo20threedv,
   author        = {Javier Hidalgo-Carrio, Daniel Gehrig and Davide Scaramuzza},
   title         = {Learning Monocular Dense Depth from Events},
   journal       = {{IEEE} International Conference on 3D Vision.(3DV)},
