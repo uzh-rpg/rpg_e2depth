@@ -43,6 +43,7 @@ conda activate E2DEPTH
 conda install pytorch torchvision cudatoolkit=10.0 -c pytorch
 conda install pandas
 conda install -c conda-forge opencv
+conda install -c conda-forge matplotlib
 ```
 
 ## Run
@@ -73,8 +74,7 @@ conda activate E2DEPTH
 - Run reconstruction:
 
 ```bash
-python offline_depth.py \
-  -c pretrained/E2DEPTH_si_grad_loss_mixed.pth.tar \
+python run_depth.py -c pretrained/E2DEPTH_si_grad_loss_mixed.pth.tar \
   -i data/test/events/voxels \
   --output_folder /tmp \
   --save_numpy \
@@ -113,7 +113,7 @@ We provide Depth Estimation oN Synthetic Events (DENSE) Dataset that you can use
 
 ## Event Camera plugin
 
-You can extend DENSE or create your own dataset to train your network using our
+You can extend DENSE or create your own dataset using our
 Event camera plugin. You can have a look [here](https://carla.readthedocs.io/en/latest/ref_sensors/#dvs-camera) for a detailed
 documentation.
 
