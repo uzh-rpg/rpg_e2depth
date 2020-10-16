@@ -76,7 +76,7 @@ conda activate E2DEPTH
 python offline_depth.py \
   -c pretrained/E2DEPTH_si_grad_loss_mixed.pth.tar \
   -i data/test/events/voxels \
-  -o /tmp \
+  --output_folder /tmp \
   --save_numpy \
   --show_event \
   --display \
@@ -99,6 +99,8 @@ Below is a description of the most important parameters:
 
 - ``--display`` (default: False): display the video reconstruction in real-time in an OpenCV window.
 - ``--show_events`` (default: False): show the input events side-by-side with the reconstruction. If ``--output_folder`` is set, the previews will also be saved to disk in ``/path/to/output/folder/events``.
+- ``--save_inv_log`` (default: False): compute (and then save) the inverse depth log instead of the depth log (default).
+- ``--save_color_map`` (default: False): use color conding to display depth. It uses matplotlib 'magma' color map. Grayscale depth otherwise.
 
 #### Additional parameters
 
@@ -115,7 +117,7 @@ You can extend DENSE or create your own dataset to train your network using our
 Event camera plugin. You can have a look [here](https://carla.readthedocs.io/en/latest/ref_sensors/#dvs-camera) for a detailed
 documentation.
 
-![Carla with Events](doc/img/sensor_dvs.gif)
+[![Carla with Events](doc/img/sensor_dvs.gif)](https://carla.readthedocs.io/en/latest/ref_sensors/#dvs-camera)
 
 ## Acknowledgements
 
