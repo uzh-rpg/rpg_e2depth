@@ -104,6 +104,8 @@ Below is a description of the most important parameters:
 
 #### Display window
 
+You can select between direct or inverse depth, log or lineal, and grayscale or color visualization.
+
 ![Display window](doc/img/e2depth_display_window.png)
 
 ## DENSE dataset
