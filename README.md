@@ -102,8 +102,9 @@ Below is a description of the most important parameters:
 - ``--save_inv_log`` (default: False): compute (and then save) the inverse depth log instead of the depth log (default).
 - ``--save_color_map`` (default: False): use color conding to display depth. It uses matplotlib 'magma' color map. Grayscale depth otherwise.
 
-#### Additional parameters
+#### Display window
 
+![Display window](doc/img/e2depth_display_window.png)
 
 ## DENSE dataset
 
