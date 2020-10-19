@@ -28,8 +28,8 @@ Dependencies:
 
 - [PyTorch](https://pytorch.org/get-started/locally/) >= 1.0
 - [NumPy](https://www.numpy.org/)
-- [Pandas](https://pandas.pydata.org/)
 - [OpenCV](https://opencv.org/)
+- [Matplotlib](https://matplotlib.org)
 
 ### Install with Anaconda
 
@@ -41,7 +41,6 @@ follows (make sure to adapt the CUDA toolkit version according to your setup):
 conda create -n E2DEPTH
 conda activate E2DEPTH
 conda install pytorch torchvision cudatoolkit=10.0 -c pytorch
-conda install pandas
 conda install -c conda-forge opencv
 conda install -c conda-forge matplotlib
 ```
