@@ -123,6 +123,10 @@ documentation.
 
 ## Acknowledgements
 
+We thank [Alessio Tonioni](https://alessiotonioni.github.io) and [Federico Tombari](http://campar.in.tum.de/Main/FedericoTombari) for their valuable help in this work.
+
 This code borrows from the following open source projects, whom we would like to thank:
 
 - [pytorch-template](https://github.com/victoresque/pytorch-template)
+- [E2VID](https://github.com/uzh-rpg/rpg_e2vid)
+  
