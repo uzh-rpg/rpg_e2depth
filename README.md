@@ -1,6 +1,6 @@
 # Learning Monocular Dense Depth from Events
 
-![Learning Monocular Dense Depth from Events](http://rpg.ifi.uzh.ch/E2DEPTH/E2DEPTH_main_grid.png)
+![Learning Monocular Dense Depth from Events](./doc/img/e2depth_post1.gif)
 
 This is the code for the paper **Learning Monocular Dense Depth from Events** by
 [Javier Hidalgo-Carrió](https://jhidalgocarrio.github.io), [Daniel Gehrig](https://danielgehrig18.github.io/), and [Davide
