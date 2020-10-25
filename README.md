@@ -64,7 +64,7 @@ wget "http://rpg.ifi.uzh.ch/data/E2DEPTH/dataset/test_sequence_00_town10.zip" -O
 unzip -q data/test_sequence_00_town10.zip -d data/test
 ```
 
-Before running the reconstruction, make sure the conda environment is sourced:
+Before running the depth prediction, make sure the conda environment is sourced:
 
 ```bash
 conda activate E2DEPTH
