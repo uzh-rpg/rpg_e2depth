@@ -144,6 +144,11 @@ def FLAGS():
         type=float,
         help='Epsilon for the log conversion')
     parser.add_argument(
+        '--events_tr',
+        default='0.02',
+        type=float,
+        help='Event temporal resolution in seconds')
+    parser.add_argument(
         '--num_bins',
         default='5',
         type=int,
@@ -402,7 +407,7 @@ class CarlaSyncMode(object):
         self.sensors = sensors
         self.args = args
         self.frame = None
-        self.delta_seconds = 1.0 / (args.fps * self.DVS_SIMULATION_RATE_FACTOR)
+        self.delta_seconds = min(args.events_tr, (1.0/args.fps))
         self._queues = []
         self._settings = None
 
@@ -970,12 +975,12 @@ def main(args, number_surfaces = 3):
 
                     if accumulative_delta_seconds >= save_delta_seconds:
                         clock.tick()
-                        #display.blit(
-                        #    font.render('% 5f FPS (real)' % clock.get_fps(), True, (255, 255, 255)),
-                        #    (8, 10))
-                        #display.blit(
-                        #    font.render('% 5f FPS (simulated)' % round(fps/sync_mode.DVS_SIMULATION_RATE_FACTOR), True, (255, 255, 255)),
-                        #    (8, 28))
+                        display.blit(
+                            font.render('% 5f FPS (real)' % clock.get_fps(), True, (255, 255, 255)),
+                            (8, 10))
+                        display.blit(
+                            font.render('% 5f FPS (simulated)' % round(fps/sync_mode.DVS_SIMULATION_RATE_FACTOR), True, (255, 255, 255)),
+                            (8, 28))
                         pygame.display.flip()
 
 
