@@ -1,0 +1,61 @@
+{
+    "methods": [
+        {
+            "name": "Ours",
+            "shortname": "Ours",
+            "loader_type": "OursLoader",
+            "folder": "Ours/PAMI/framesynced"
+        }
+    ],
+    "datasets": [
+        {
+            "name": "dynamic_6dof",
+            "config": {
+                "start_time_s": 5.0,
+                "stop_time_s": 20.0
+            }
+        },
+        {
+            "name": "boxes_6dof",
+            "config": {
+                "start_time_s": 5.0,
+                "stop_time_s": 20.0
+            }
+        },
+        {
+            "name": "poster_6dof",
+            "config": {
+                "start_time_s": 5.0,
+                "stop_time_s": 20.0
+            }
+        },
+        {
+            "name": "shapes_6dof",
+            "config": {
+                "start_time_s": 5.0,
+                "stop_time_s": 20.0
+            }
+        },
+        {
+            "name": "office_zigzag",
+            "config": {
+                "start_time_s": 5.0,
+                "stop_time_s": 12.0
+            }
+        },
+        {
+            "name": "slider_depth",
+            "config": {
+                "start_time_s": 1.0,
+                "stop_time_s": 2.5
+            }
+        },
+        {
+            "name": "calibration",
+            "config": {
+                "start_time_s": 5.0,
+                "stop_time_s": 20.0
+            }
+        }
+    ]
+}

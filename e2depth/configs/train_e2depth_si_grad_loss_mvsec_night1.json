@@ -1,0 +1,76 @@
+{
+    "name": "e2depth_si_grad_loss_mvsec_night1",
+    "cuda": true,
+    "gpu": 0,
+    "data_loader": {
+        "train": {
+            "type": "SequenceSynchronizedFramesEventsDataset",
+            "base_folder": "e2depth_dataset/mvsec_dataset_night1/train",
+            "depth_folder": "depth/data",
+            "flow_folder": "",
+            "event_folder": "events/voxels",
+            "proba_pause_when_running": 0.0,
+            "proba_pause_when_paused": 0.0,
+            "step_size": 12
+        },
+        "validation": {
+            "type": "SequenceSynchronizedFramesEventsDataset",
+            "base_folder": "e2depth_dataset/mvsec_dataset_night1/validation",
+            "depth_folder": "depth/data",
+            "flow_folder": "",
+            "event_folder": "events/voxels",
+            "proba_pause_when_running": 0.0,
+            "proba_pause_when_paused": 0.0,
+            "step_size": 5
+        },
+        "batch_size": 12,
+        "num_workers": 4,
+        "pin_memory": true,
+        "normalize": true,
+        "shuffle": true
+    },
+    "lr_scheduler_type": "ExponentialLR",
+    "lr_scheduler_freq": 1000,
+    "lr_scheduler": {
+        "gamma": 1.0
+    },
+    "optimizer_type": "Adam",
+    "optimizer": {
+        "lr": 0.0001,
+        "weight_decay": 0
+    },
+    "loss": {
+        "type": "scale_invariant_loss",
+        "config": {"weight": 1.0, "n_lambda" : 0.5}
+    },
+    "grad_loss": {
+        "weight": 0.5
+    },
+    "metrics": [
+        "mse",
+        "scale_invariant_error",
+        "median_error"
+    ],
+    "trainer": {
+        "epochs": 301,
+        "sequence_length": 40,
+        "save_dir": "/data/scratch/javi/e2depth_checkpoints/",
+        "save_freq": 4,
+        "verbosity": 2,
+        "monitor": "val_loss",
+        "monitor_mode": "min",
+        "num_previews": 4,
+        "num_val_previews": 4
+    },
+    "arch": "E2VIDRecurrent",
+    "model": {
+        "num_bins": 5,
+        "skip_type": "sum",
+        "recurrent_block_type": "convlstm",
+        "num_encoders": 3,
+        "base_num_channels": 32,
+        "num_residual_blocks": 2,
+        "use_upsample_conv": true,
+        "norm": "none"
+    }
+}

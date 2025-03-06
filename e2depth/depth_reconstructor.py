@@ -1,16 +1,18 @@
 import torch
 import cv2
 import numpy as np
-from e2depth.model.model import *
-from utils.inference_utils import CropParameters, ImageDepthWriter, DepthDisplay
+from model.model import *
+from utils.inference_utils import CropParameters, IntensityRescaler, ImageDepthWriter
 from utils.event_tensor_utils import EventPreprocessor
+from utils.image_display_utils import DepthDisplay
 from utils.util import robust_min, robust_max
 from utils.timers import CudaTimer, cuda_timers
 from os.path import join
 from collections import deque
+import torch.nn.functional as F
 
 
-class DepthEstimator:
+class DepthReconstructor:
     def __init__(self, model, height, width, num_bins, options):
 
         self.model = model
@@ -38,6 +40,7 @@ class DepthEstimator:
         self.last_states_for_each_channel = {'grayscale': None}
 
         self.event_preprocessor = EventPreprocessor(options)
+        self.intensity_rescaler = IntensityRescaler(options)
         self.image_writer = ImageDepthWriter(options)
         self.image_display = DepthDisplay(options)
 

@@ -1,0 +1,76 @@
+{
+    "name": "firenet",
+    "cuda": true,
+    "gpu": 0,
+    "data_loader": {
+        "train": {
+            "type": "SequenceSynchronizedFramesEventsDataset",
+            "base_folder": "ecoco_depthmaps_test/train",
+            "frame_folder": "frames",
+            "flow_folder": "flow",
+            "event_folder": "VoxelGrid-betweenframes-5",
+            "proba_pause_when_running": 0.0,
+            "proba_pause_when_paused": 0.0,
+            "step_size": 20
+        },
+        "validation": {
+            "type": "SequenceSynchronizedFramesEventsDataset",
+            "base_folder": "ecoco_depthmaps_test/validation",
+            "frame_folder": "frames",
+            "flow_folder": "flow",
+            "event_folder": "VoxelGrid-betweenframes-5",
+            "proba_pause_when_running": 0.0,
+            "proba_pause_when_paused": 0.0,
+            "step_size": 10
+        },
+        "batch_size": 2,
+        "num_workers": 4,
+        "pin_memory": true,
+        "normalize": false,
+        "shuffle": true
+    },
+    "lr_scheduler_type": "ExponentialLR",
+    "lr_scheduler_freq": 1000,
+    "lr_scheduler": {
+        "gamma": 1.0
+    },
+    "optimizer_type": "Adam",
+    "optimizer": {
+        "lr": 0.0001,
+        "weight_decay": 0
+    },
+    "loss": {
+        "type": "perceptual_loss"
+    },
+    "temporal_consistency_loss": {
+        "L0": 10,
+        "weight": 2.0
+    },
+    "metrics": [
+        "mse"
+    ],
+    "trainer": {
+        "epochs": 2001,
+        "sequence_length": 40,
+        "save_dir": "saved/",
+        "save_freq": 4,
+        "verbosity": 2,
+        "monitor": "val_loss",
+        "monitor_mode": "min",
+        "num_previews": 1,
+        "num_val_previews": 1
+    },
+    "arch": "FireNet",
+    "model": {
+        "num_bins": 5,
+        "skip_type": "sum",
+        "recurrent_block_type": "convgru",
+        "base_num_channels": 16,
+        "num_residual_blocks": 2,
+        "norm": "none",
+        "kernel_size": 3,
+        "recurrent_blocks": {
+            "resblock": [0]
+        }
+    }
+}

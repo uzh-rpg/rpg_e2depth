@@ -1,0 +1,124 @@
+{
+    "methods": [
+        {
+            "name": "HF",
+            "shortname": "HF",
+            "loader_type": "CFLoader",
+            "folder": "CF/framesynced",
+            "loader_config": {
+                "bilateral_filter_sigma": 1.0
+            }
+        },
+        {
+            "name": "MR",
+            "shortname": "MR",
+            "loader_type": "MRLoader",
+            "folder": "MR"
+        },
+        {
+            "name": "Ours (Lightweight, Recurrent, Temporal loss)",
+            "shortname": "Ours_LRT",
+            "loader_type": "OursLoader",
+            "folder": "Ours/PAMI_lightweight/framesynced"
+        },
+        {
+            "name": "Ours (Lightweight, Recurrent, Temporal loss, auto HDR)",
+            "shortname": "Ours_LRT_HDR",
+            "loader_type": "OursLoader",
+            "folder": "Ours/PAMI_lightweight/framesynced_autohdr"
+        },
+        {
+            "name": "Ours (Ligthweight, Recurrent)",
+            "shortname": "Ours_LR",
+            "loader_type": "OursLoader",
+            "folder": "Ours/PAMI_lightweight_no_tc/framesynced"
+        },
+        {
+            "name": "Ours (Ligthweight, Temporal loss)",
+            "shortname": "Ours_LT",
+            "loader_type": "OursLoader",
+            "folder": "Ours/PAMI_lightweight/framesynced_no_recurrent"
+        },
+        {
+            "name": "Ours (Lightweight)",
+            "shortname": "Ours",
+            "loader_type": "OursLoader",
+            "folder": "Ours/PAMI_lightweight_no_tc/framesynced_no_recurrent"
+        },
+        {
+            "name": "Ours (Recurrent, Temporal loss)",
+            "shortname": "Ours_RT",
+            "loader_type": "OursLoader",
+            "folder": "Ours/PAMI/framesynced"
+        },
+        {
+            "name": "Ours_RNN (CVPR'19)",
+            "shortname": "Ours_RNN",
+            "loader_type": "OursLoader",
+            "folder": "Ours/ecoco_K_last_frames/framesynced"
+        },
+        {
+            "name": "Ours (Lightweight, Recurrent, Temporal loss, 200 Hz)",
+            "shortname": "Ours_LRT_200Hz",
+            "loader_type": "OursLoader",
+            "folder": "Ours/PAMI_lightweight/fixedrate_200Hz"
+        },
+        {
+            "name": "Ours_RNN (CVPR'19, 200 Hz)",
+            "shortname": "Ours_RNN_200Hz",
+            "loader_type": "OursLoader",
+            "folder": "Ours/ecoco_K_last_frames/fixedrate_200Hz"
+        }
+    ],
+    "datasets": [
+        {
+            "name": "dynamic_6dof",
+            "config": {
+                "start_time_s": 5.0,
+                "stop_time_s": 20.0
+            }
+        },
+        {
+            "name": "boxes_6dof",
+            "config": {
+                "start_time_s": 5.0,
+                "stop_time_s": 20.0
+            }
+        },
+        {
+            "name": "poster_6dof",
+            "config": {
+                "start_time_s": 5.0,
+                "stop_time_s": 20.0
+            }
+        },
+        {
+            "name": "shapes_6dof",
+            "config": {
+                "start_time_s": 5.0,
+                "stop_time_s": 20.0
+            }
+        },
+        {
+            "name": "office_zigzag",
+            "config": {
+                "start_time_s": 5.0,
+                "stop_time_s": 12.0
+            }
+        },
+        {
+            "name": "slider_depth",
+            "config": {
+                "start_time_s": 1.0,
+                "stop_time_s": 2.5
+            }
+        },
+        {
+            "name": "calibration",
+            "config": {
+                "start_time_s": 5.0,
+                "stop_time_s": 20.0
+            }
+        }
+    ]
+}
